@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseTracker.MainPage"
+             Title="Budget Overview">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Button Text="Profile"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Clicked="OnProfileButtonClicked"/>
+
+
+        <ScrollView Grid.Row="1" Orientation="Vertical" VerticalScrollBarVisibility="Always">
+            <StackLayout Padding="20">
+                <Label Text="Budget Overview" FontSize="Large" HorizontalOptions="Center" Margin="0,20,0,20"/>
+
+                <Label x:Name="salaryLabel" Text="Salary" FontSize="Large" HorizontalOptions="Center" Margin="20,0,0,20"/>
+                <Entry x:Name="salaryEntry" Placeholder="Enter Salary" Keyboard="Numeric" WidthRequest="300" HorizontalOptions="Center"/>
+                <Button Text="Update Salary" Clicked="OnAddSalary" HorizontalOptions="Center" Margin="0,10,0,20"/>
+
+                <Label x:Name="salaryLeft" Text="Savings Left: R0.00" FontSize="Large" HorizontalOptions="Center" Margin="20,0,0,20"/>
+
+               
+                <Grid ColumnDefinitions="Auto, *, Auto, *" RowSpacing="10">
+            
+                    <Label x:Name="expenseLabel" Text="Expense" FontSize="Large" 
+                           HorizontalOptions="End" VerticalOptions="Center" Grid.Column="0" />
+                    <Entry x:Name="expenseEntry" Placeholder="Enter Expense" Keyboard="Numeric" 
+                           WidthRequest="150" HorizontalOptions="Start" Grid.Column="1" />
+
+                    <Label x:Name="expenseDescription" Text="Expense Description" FontSize="Large" 
+                           HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2" />
+                    <Entry x:Name="expenseDescriptionEntry" Placeholder="Enter Expense Description" 
+                           WidthRequest="150" HorizontalOptions="Start" Grid.Column="3" />
+                </Grid>
+
+                <Button Text="Add Expense" Clicked="OnAddExpense" 
+                        HorizontalOptions="Center" Margin="0,10,0,20"/>
+
+                <StackLayout x:Name="ExpenseItemsContainer" Padding="10" Spacing="10">
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

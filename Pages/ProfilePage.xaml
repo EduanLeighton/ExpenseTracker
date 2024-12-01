@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseTracker.ProfilePage"
+             Title="ProfilePage">
+
+    <StackLayout Padding="20"
+                >
+
+        <Button Text="Go back"
+                x:Name="GoBackButton"
+                Clicked="GoBackButton_Clicked" 
+                Padding="20"
+                WidthRequest="150"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                />
+
+        <Editor Placeholder="Name" 
+                x:Name="ProfileName"
+                Margin="0,10,0,10"
+                WidthRequest="250"
+                />
+        <Editor Placeholder="Password" 
+                x:Name="ProfilePassword"
+                Margin="0,0,0,10"
+                WidthRequest="250"
+                />
+
+        <Button Text="Update Account"
+                x:Name="UpdateAccountButton"
+                Clicked="OnUpdateAccountClicked"
+                Padding="20"
+                Margin="0,10,0,10"
+                WidthRequest="150"
+                />
+
+
+        <Button Text="Delete Account"
+                TextColor="White"
+                BackgroundColor="Red"
+                x:Name="DeleteAccountButton"
+                Clicked="OnDeleteAccountClicked"
+                Margin="0,10,0,10"
+                WidthRequest="150"
+                />
+    </StackLayout>
+
+
+</ContentPage>
